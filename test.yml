@@ -1,0 +1,4 @@
+#testing playbook
+---
+- hosts: all
+  become: true
