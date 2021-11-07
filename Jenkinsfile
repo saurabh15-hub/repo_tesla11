@@ -1,22 +1,9 @@
-
 pipeline{
     agent any
     stages {
-        stage('install dependencies') {
+        stage("git"){
             steps{
-                sh 'npm install'
-            }
-        }
-    
-        stage('Test'){
-            steps{
-                sh 'echo "testing application"'
-            }
-        }
-        
-        stage('Deploy nodejs application'){
-            steps{
-                sh 'echo "deploying application"'
+                git credentialsId: 'git_credentials', url: 'https://github.com/saurabh15-hub/Calculator.git'
             }
         }
     }
